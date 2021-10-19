@@ -1,4 +1,7 @@
-# Getting Started with Create React App
+# Project Overview
+Created in order to translate flags from emojis to their corresponding country. Maintains a running list of flags inputted and countries outputted.
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
