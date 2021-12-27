@@ -9,17 +9,29 @@ interface Props {
 
 const OutputItem = ({ country }: Props) => {
   const [countryInfo, setCountryInfo] = useState<CountryInfoType>()
+  const [anchorEl, setAnchorEl] = useState(null)
 
-  function handleOnClick() {
+  const handleClose = () => {
+    setAnchorEl(null)
+  }
+
+  const handleClick = (event: any) => {
     getCountryDetails(country).then((result) => {
       setCountryInfo(result[0])
     })
+    setAnchorEl(event.currentTarget)
   }
 
   return (
     <TableCell align="right">
-      <Button onClick={handleOnClick}>{country}</Button>
-      <CountryInfo countryInfo={countryInfo} />
+      <Button onClick={handleClick}>{country}</Button>
+      {countryInfo != null ? (
+        <CountryInfo
+          countryInfo={countryInfo}
+          anchor={anchorEl}
+          onClose={handleClose}
+        />
+      ) : null}
     </TableCell>
   )
 }
