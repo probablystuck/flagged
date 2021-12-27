@@ -277,6 +277,7 @@ const InputBox = ({ handleFlagInput }: Props) => {
 
       if (output !== undefined) {
         handleFlagInput(reference.current.value, output)
+        reference.current.value = ""
       }
     }
   }
