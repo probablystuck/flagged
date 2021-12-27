@@ -3,7 +3,7 @@ import { CountryInfoType } from "./api"
 
 interface Props {
   countryInfo: CountryInfoType
-  onClose: any
+  onClose: () => void
   anchor: any
 }
 
