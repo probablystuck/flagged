@@ -4,6 +4,9 @@ import { CountryInfoType } from "./api"
 interface Props {
   countryInfo: CountryInfoType
   onClose: () => void
+  /**
+   * TODO: get this away from any!
+   */
   anchor: any
 }
 

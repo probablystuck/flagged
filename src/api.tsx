@@ -67,9 +67,5 @@ export async function getCountryDetails(
 ): Promise<CountryInfoType[]> {
   const url = `https://restcountries.com/v2/name/${countryName}?fullText=true`
 
-  const response = await axios.get<CountryInfoType[]>(url)
-
-  console.log(response)
-
-  return response.data
+  return (await axios.get<CountryInfoType[]>(url)).data
 }
