@@ -12,8 +12,7 @@ const OutputItem = ({ country }: Props) => {
 
   function handleOnClick() {
     getCountryDetails(country).then((result) => {
-      console.log(result)
-      setCountryInfo(result)
+      setCountryInfo(result[0])
     })
   }
 

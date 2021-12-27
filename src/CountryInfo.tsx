@@ -5,8 +5,11 @@ interface Props {
 }
 
 const CountryInfo = ({ countryInfo }: Props) => {
-  console.log(countryInfo)
-  return <>{countryInfo != null ? <div>{countryInfo.population}</div> : null}</>
+  return (
+    <>
+      {countryInfo !== undefined ? <div>{countryInfo.population}</div> : null}
+    </>
+  )
 }
 
 export default CountryInfo
