@@ -8,6 +8,7 @@ import {
   TableCell,
 } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
+import OutputItem from "./OutputItem"
 
 const useStyles = makeStyles((theme) => ({
   table: {
@@ -41,7 +42,7 @@ const OutputBox = ({ flagsTranslated }: Props) => {
               <TableCell component="th" scope="row">
                 {flags.input}
               </TableCell>
-              <TableCell align="right">{flags.output}</TableCell>
+              <OutputItem country={flags.output} />
             </TableRow>
           ))}
         </TableBody>

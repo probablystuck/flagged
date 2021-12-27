@@ -244,7 +244,7 @@ const flagMap = new Map([
   ["🇹🇿", "Tanzania"],
   ["🇺🇦", "Ukraine"],
   ["🇺🇬", "Uganda"],
-  ["🇺🇸", "United States"],
+  ["🇺🇸", "USA"],
   ["🇺🇾", "Uruguay"],
   ["🇺🇿", "Uzbekistan"],
   ["🇻🇦", "Vatican City"],
