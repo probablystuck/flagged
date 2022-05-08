@@ -1,7 +1,6 @@
 import { TableCell, Button } from "@material-ui/core"
 import { useState } from "react"
-import { CountryInfoType, getCountryDetails } from "./api"
-import CountryInfo from "./CountryInfo"
+import { CountryInfoType, getCountryDetails } from "./api/api"
 
 interface Props {
   country: string
@@ -9,30 +8,29 @@ interface Props {
 
 const OutputItem = ({ country }: Props) => {
   const [countryInfo, setCountryInfo] = useState<CountryInfoType>()
-  const [anchorEl, setAnchorEl] = useState(null)
 
-  const handleClose = () => {
-    setAnchorEl(null)
-  }
-
-  const handleClick = (event: any) => {
-    getCountryDetails(country).then((result) => {
-      setCountryInfo(result[0])
-    })
-    setAnchorEl(event.currentTarget)
-  }
+  getCountryDetails(country).then((result) => {
+    setCountryInfo(result[0])
+  })
 
   return (
-    <TableCell align="right">
-      <Button onClick={handleClick}>{country}</Button>
+    <>
+      <TableCell align="center">{country}</TableCell>
       {countryInfo != null ? (
-        <CountryInfo
-          countryInfo={countryInfo}
-          anchor={anchorEl}
-          onClose={handleClose}
-        />
+        <TableCell>
+          <div style={{ textAlign: "justify" }}>
+            <p>Capital: {countryInfo.capital}</p>
+            <p>Population: {countryInfo.population}</p>
+            <p>Languages:</p>
+            {countryInfo.languages.map((language) => (
+              <p>{language}</p>
+            ))}
+            <p>Subregion: {countryInfo.subregion}</p>
+            <p>Region: {countryInfo.region}</p>
+          </div>
+        </TableCell>
       ) : null}
-    </TableCell>
+    </>
   )
 }
 

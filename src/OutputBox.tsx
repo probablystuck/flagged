@@ -12,7 +12,8 @@ import OutputItem from "./OutputItem"
 
 const useStyles = makeStyles((theme) => ({
   table: {
-    width: "20%",
+    display: "flex",
+    width: "80%",
     margin: theme.spacing(3),
   },
 }))
@@ -33,7 +34,8 @@ const OutputBox = ({ flagsTranslated }: Props) => {
         <TableHead>
           <TableRow>
             <TableCell>Flags</TableCell>
-            <TableCell align="right">Countries</TableCell>
+            <TableCell align="left">Countries</TableCell>
+            <TableCell>Info</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
